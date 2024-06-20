@@ -15,10 +15,10 @@ function App() {
   return (
     <Routes>
       <Route path="/signup" element={<Register />} />
-      <Route path="/" element={<Login />} />
+      <Route path="/profile" element={<Login />} />
       <Route path="/loader" element={<Loader />} />
       <Route path="/usersetup" element={<Setup />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/" element={<Profile />} />
       <Route path="/userTest" element={ <Test/>} />
       {/* <Route path="/test" element={<UploadPost />} /> */}
       {/* <Route path="/usertest" element={<Login />} /> */}
