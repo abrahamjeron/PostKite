@@ -1,0 +1,220 @@
+
+.setup-msg{
+    position: relative;
+    top: 30px;
+    margin-left: 100px;
+    font-weight: 500;
+}
+.profile-photo{
+    position: relative;
+    top: 60px;
+    left: 100px;
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 150px;
+    overflow: hidden;
+}
+.setupform {
+    position: relative;
+    margin: 0 auto;
+    background-color: #191c2d;
+    width: 95%;
+    height: 85vh;
+    border-radius: 15px;
+}
+.profile-input{
+    position: relative;
+    top: 10px;
+    left: 270px;
+    height: 50px;
+    width: 50px;
+}
+.default-profile-photo{
+    position: relative;
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 150px;
+}
+.bio{
+    position: relative;
+    left: 100px;
+    top: 40px;
+    margin-bottom: 90px;
+    height: 230px;
+    border-radius: 10px;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.profile-label{
+    position: relative;
+    left: 100px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.639);
+}
+.bio-label{
+    position: relative;
+ 
+    left: 100px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.639);
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+}
+.vertical-line {
+    position: relative;
+    bottom: 550px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.38);
+    width: 1px;
+    height: 550px;
+}
+.text-form{
+    position: relative;
+    left: 700px;
+    bottom: 1350px;
+}
+.labels{
+    position: relative;
+    top: 40px;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.661);
+}
+.text-inputs{
+    position: relative;
+    top: -15px;
+    left: 190px;
+    margin-top: 30px;
+}
+.finish-setup-btn{
+    position: relative;
+    bottom: 1300px;
+    left: 77%;
+    font-size: 1rem;
+}
+@media (max-width: 480px){
+    .setupform {
+        /* position: relative;
+        margin: 0 auto;
+        background-color: #191c2d; */
+        width: 95%;
+        height: 135vh;
+        /* border-radius: 15px; */
+    }
+    .setup-msg{
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        top: 20px;
+        margin-left: 0px;
+        /* font-weight: 500; */
+        font-size: 1rem;
+    }
+    .profile-label{
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        left: 0px;
+        font-size: 0.8rem;
+        /* color: rgba(255, 255, 255, 0.639); */
+    }
+    .profile-photo{
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        top: 50px;
+        left: 120px;
+        align-items: center;
+        /* background-color: white; */
+        height: 100px;
+        width: 100px;
+        /* border-radius: 150px;
+        overflow: hidden; */
+    }
+    .default-profile-photo{
+        /* position: relative;
+        background-color: white; */
+        height: 100px;
+        width: 100px;
+        /* border-radius: 150px; */
+    }
+    .profile-input{
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        top: 50px;
+        left: 130px;
+        height: 60px;
+        width: 120px;
+    }
+    .bio-label{
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        left: 0px;
+        font-size: 0.8rem;
+        /* color: rgba(255, 255, 255, 0.639); */
+    }
+    .bio{
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        left: 45px;
+        top: 40px;
+        margin-bottom: 90px;
+        height: 150px;
+        width: 250px;
+        /* border-radius: 10px;
+        color: black; */
+        font-size: 0.8rem;
+        /* font-weight: 500; */
+    }
+    .vertical-line {
+        /* position: relative; */
+        bottom: 0px;
+        /* display: flex;
+        justify-content: center; */
+        /* background-color: rgba(255, 255, 255, 0.38); */
+        width: 300px;
+        height: 1px;
+    }
+    .text-form{
+        position: relative;
+        left: 0px;
+        bottom: 650px;
+    }
+    .labels{
+        /* position: relative; */
+        top: 0px;
+        left: 50px;
+        font-size: 0.9rem;
+        /* color: rgba(255, 255, 255, 0.661); */
+    }
+    .text-inputs{
+        /* position: relative; */
+        top: -15px;
+        left: 50px;
+        margin-top: 30px;
+        height: 20px;
+        width: 250px;
+    }
+    .finish-setup-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        bottom: 650px;
+        left: 35%;
+        font-size: 0.8rem;
+        width: 120px;
+        height: 20px;
+        font-weight: 600;
+    }
+}
