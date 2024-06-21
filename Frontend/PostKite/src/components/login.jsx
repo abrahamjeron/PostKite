@@ -12,13 +12,7 @@ function Login(){
     const [password,setPassword]=useState('')
     const [loading, setLoading] = useState(false); 
     const navigate = useNavigate()
-    const removeAllCookies = () => {
-        const cookies = Cookies.get();
-        for (const cookie in cookies) {
-            Cookies.remove(cookie);
-        }
-    };
-    // removeAllCookies()
+
     const handleLogin = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -30,7 +24,7 @@ function Login(){
                 if (userData.status === 201) {
                     Cookies.set('userName', userName, { expires: 7 });
                     console.log(userData);
-                    navigate('/signup');
+                    navigate('/home');
                 }
             } else {
                 setTimeout(() => {

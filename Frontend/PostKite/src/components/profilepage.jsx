@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import kite from "./assets/Kite.png";
 import home from "./assets/Home.png";
 import search from "./assets/Search.png";
@@ -13,6 +14,7 @@ import me from './assets/me.png';
 import edit from "./assets/edit.png";
 import "./profilepage.css";
 import Cookies from 'js-cookie';
+import Loader from "./loader";
 
 function Profile() {
     const [hover, setHover] = useState(false);
@@ -27,7 +29,8 @@ function Profile() {
     const [userFollowing, setUserFollowing] = useState('');
     const [userIntrest, setUserIntrest] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
-
+    const [loading, setLoading] = useState(false); 
+    const Navigate = useNavigate()
     const handleMouseOver = () => {
         if (!isMobile) {
             setHover(true);
@@ -55,8 +58,9 @@ function Profile() {
 
     useEffect(() => {
         const fetchKites = async () => {
+            setLoading(true);
             try {
-                if (!userName) return; // Exit early if userName is not set
+                if (!userName) return; 
                 const response = await fetch(`http://localhost:3000/posts/userKite/${userName}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -66,38 +70,47 @@ function Profile() {
                 console.log(result);
             } catch (error) {
                 console.error('Fetch error:', error.message);
+            }finally{
+                setLoading(false);
             }
         };
 
         fetchKites();
     }, [userName]);
 
-    useEffect(() => {
-        const fetchUserDetails = async () => {
-            try {
-                const userDetails = await fetch(`http://localhost:3000/users/user/Abraham`);
-                if (!userDetails.ok) {
-                    throw new Error('Failed to fetch user details');
-                }
-                const result = await userDetails.json();
-                setKiteUser(result.userName);
-                console.log(result);
+useEffect(() => {
+    const fetchUserDetails = async () => {
+        setLoading(true);
+        try {
+            const response = await fetch(`http://localhost:3000/users/user/${userName}`);
+            console.log('Response Status:', response.status);
 
-                setKiteUserName(result.user);
-                setUserProfile(result.profile);
-                setUserBanner(result.banner);
-                setUserBio(result.bio);
-                setUserFollowers(result.followers);
-                setUserFollowing(result.following);
-                setUserIntrest(result.intrestedIn);
-
-            } catch (err) {
-                console.log(err);
+            if (!response.ok) {
+                const errorMessage = `Error: ${response.status} ${response.statusText}`;
+                throw new Error(errorMessage);
             }
-        };
 
-        fetchUserDetails();
-    }, []); // Dependency array indicates when to re-run the effect
+            const result = await response.json();
+
+            setKiteUser(result.userName);
+            setKiteUserName(result.user);
+            setUserProfile(result.profile);
+            setUserBanner(result.banner);
+            setUserBio(result.bio);
+            setUserFollowers(result.followers);
+            setUserFollowing(result.following);
+            setUserIntrest(result.interestedIn);
+            console.log(result);
+
+        } catch (error) {
+            console.error('Failed to fetch user details:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    fetchUserDetails();
+}, [userName]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -112,6 +125,7 @@ function Profile() {
     }, []);
 
     return (
+        loading?<Loader/>:
         <div>
             <img src={kite} alt="Kite" id="logo-image3" />
             <div className="navs">
@@ -124,7 +138,7 @@ function Profile() {
                     <ul className="icons" style={{ marginLeft: hover && !isMobile ? "-175px" : "-50px" }}>
                         <li>
                             {hover && !isMobile ? (
-                                <div>
+                                <div onClick={(e)=>Navigate('/home')}>
                                     <img src={home} alt="Home" /> <p className="descriptions">Home</p>
                                 </div>
                             ) : (
@@ -162,11 +176,11 @@ function Profile() {
                         <li>
                             {hover && !isMobile ? (
                                 <div>
-                                    <img src={profile} alt="Profile" />
+                                    <img src={`http://localhost:3000/images/${userProfile}`} alt="Profile" />
                                     <p className="descriptions">Profile</p>
                                 </div>
                             ) : (
-                                <img src={profile} alt="Profile" />
+                                <img src={`http://localhost:3000/images/${userProfile}`} alt="Profile" />
                             )}
                         </li>
                     </ul>
@@ -211,7 +225,7 @@ function Profile() {
                     <h4>I'm Interested in:</h4>
                     <p>{userIntrest}</p>
                     <li className="followdetails">
-                        <h6>18 Kites</h6>
+                        <h6>{kites.length} Kites</h6>
                         <h6>{userFollowers} Followers</h6>
                         <h6>{userFollowing} Following</h6>
                     </li>
