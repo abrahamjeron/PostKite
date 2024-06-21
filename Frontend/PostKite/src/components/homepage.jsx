@@ -15,7 +15,7 @@ function Home() {
         const fetchUsersDetails = async () => {
             setLoading(true)
             try {
-                const usersDetails = await fetch(`http://localhost:3000/users/userdata`);
+                const usersDetails = await fetch(`https://postkite.onrender.com/users/userdata`);
                 const result = await usersDetails.json();
                 setUsers(result);
             } catch (err) {
@@ -32,7 +32,7 @@ function Home() {
         const fetchUsersPosts = async () => {
             setLoading(true)
             try {
-                const usersPosts = await fetch(`http://localhost:3000/posts/allpost`);
+                const usersPosts = await fetch(`https://postkite.onrender.com/posts/allpost`);
                 const result = await usersPosts.json();
                 setPosts(result);
             } catch (err) {
@@ -61,7 +61,7 @@ function Home() {
             <div className="side-profiles">
                 {users.map((user, index) => (
                     <div key={index} className="user-profiles">
-                        <img className="profileimgs" src={`http://localhost:3000/images/${user.profile}`} alt={`${user.userName}'s profile`} />
+                        <img className="profileimgs" src={`https://postkite.onrender.com/images/${user.profile}`} alt={`${user.userName}'s profile`} />
                         <p>{user.userName}</p>
                     </div>
                 ))}
@@ -79,11 +79,11 @@ function Home() {
                         <div className="baground">
                             {users.map((user, idx) => (
                                 user.userName === post.userName ? (
-                                    <img key={idx} src={`http://localhost:3000/images/${user.profile}`} alt={`${user.userName}'s profile`} className="post-profile-img" />
+                                    <img key={idx} src={`https://postkite.onrender.com/images/${user.profile}`} alt={`${user.userName}'s profile`} className="post-profile-img" />
                                 ) : null
                             ))}
                             <p className="top-username">{post.userName}</p>
-                            <img src={`http://localhost:3000/images/${post.postImage}`} alt="" className="post-image" />
+                            <img src={`https://postkite.onrender.com/images/${post.postImage}`} alt="" className="post-image" />
                             <div className="post-details">
                                 <div>
                                     <img src={like} alt="" /> 

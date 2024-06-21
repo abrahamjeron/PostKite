@@ -33,7 +33,7 @@ function Navbar(){
     useEffect(() => {
         const fetchUserDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/users/user/${userName}`);
+                const response = await fetch(`https://postkite.onrender.com/users/user/${userName}`);
                 console.log('Response Status:', response.status);
     
                 if (!response.ok) {
@@ -85,7 +85,7 @@ function Navbar(){
                             <img src={chat} alt="Chat" />
                         </li>
                         <li>
-                            <img src={`http://localhost:3000/images/${userProfile}`} alt="Profile" onClick={gotprofile}/>
+                            <img src={`https://postkite.onrender.com/images/${userProfile}`} alt="Profile" onClick={gotprofile}/>
                         </li>
                     </ul>
                     <ul className="icons3">

@@ -52,7 +52,7 @@ function Setup() {
         setLoading(true);
         
         try {
-            const res = await axios.post("http://localhost:3000/users/uploadUser", formData, {
+            const res = await axios.post("https://postkite.onrender.com/users/uploadUser", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

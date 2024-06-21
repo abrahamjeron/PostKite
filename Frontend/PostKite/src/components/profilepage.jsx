@@ -61,7 +61,7 @@ function Profile() {
             setLoading(true);
             try {
                 if (!userName) return; 
-                const response = await fetch(`http://localhost:3000/posts/userKite/${userName}`);
+                const response = await fetch(`https://postkite.onrender.com/posts/userKite/${userName}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -82,7 +82,7 @@ useEffect(() => {
     const fetchUserDetails = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:3000/users/user/${userName}`);
+            const response = await fetch(`https://postkite.onrender.com/users/user/${userName}`);
             console.log('Response Status:', response.status);
 
             if (!response.ok) {
@@ -176,11 +176,11 @@ useEffect(() => {
                         <li>
                             {hover && !isMobile ? (
                                 <div>
-                                    <img src={`http://localhost:3000/images/${userProfile}`} alt="Profile" />
+                                    <img src={`https://postkite.onrender.com/images/${userProfile}`} alt="Profile" />
                                     <p className="descriptions">Profile</p>
                                 </div>
                             ) : (
-                                <img src={`http://localhost:3000/images/${userProfile}`} alt="Profile" />
+                                <img src={`https://postkite.onrender.com/images/${userProfile}`} alt="Profile" />
                             )}
                         </li>
                     </ul>
@@ -210,9 +210,9 @@ useEffect(() => {
             </div>
             <div className="main">
                 <div className="banner" style={{ marginLeft: hover && !isMobile ? "270px" : "120px" }}>
-                    <img src={`http://localhost:3000/images/${userBanner}`} className="bannerimg" alt="Banner" />
+                    <img src={`https://postkite.onrender.com/images/${userBanner}`} className="bannerimg" alt="Banner" />
                     <div className="profile" style={{ right: isMobile? "250px": (hover?"800px" : "1000px") }}>
-                        <img src={`http://localhost:3000/images/${userProfile}`} className="profileimg" alt="Profile" />
+                        <img src={`https://postkite.onrender.com/images/${userProfile}`} className="profileimg" alt="Profile" />
                     </div>
                 </div>
             </div>
@@ -243,7 +243,7 @@ useEffect(() => {
                 {kites.length > 0 ? (
                     kites.map((kite, index) => (
                         <div key={index} className="kite">
-                            <img src={`http://localhost:3000/images/${kite.postImage}`} alt={`Kite ${index}`} />
+                            <img src={`https://postkite.onrender.com/images/${kite.postImage}`} alt={`Kite ${index}`} />
                         </div>
                     ))
                 ) : (
