@@ -18,7 +18,7 @@ function Register() {
         if (password === confirmPassword) {
             setLoading(true)
             try {
-                const userData = await axios.post(`http://localhost:3000/auth/authUser`, { userName, password });
+                const userData = await axios.post(`https://postkite.onrender.com/auth/authUser`, { userName, password });
                 console.log(`User successfully registered: ${userData.data}`);
                 navigate('/')
             } catch (err) {

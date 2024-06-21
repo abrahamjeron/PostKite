@@ -17,7 +17,7 @@ function Login(){
         e.preventDefault();
         setLoading(true);
         try {
-            const userData = await axios.get(`http://localhost:3000/auth/getuserbyUsername/${userName}`);
+            const userData = await axios.get(`https://postkite.onrender.com/auth/getuserbyUsername/${userName}`);
             const fetchedPassword = userData.data[0].password;
             console.log(fetchedPassword);
             if (fetchedPassword === password) {
