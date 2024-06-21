@@ -1,0 +1,83 @@
+.main-navs{
+    position: fixed;
+    top: 10px;
+    left: 520px;
+    z-index: 1001;
+}
+.topnavs{
+    border-radius: 10px;
+    background-color: #191c2d;
+    height: 70px;
+    width: 390px;
+}
+.main-icons1{
+    position: relative;
+    right: 110px;
+    top: 20px;
+}
+.main-icons1 li img{
+    position: relative;
+    height: 32px;
+    display: flex;
+    margin-left: 20px;
+}
+.icons3{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -560px;
+    bottom: 10px;
+}
+.icons3 li img{
+    height: 40px;
+    margin-bottom: 25px;
+}
+.logo{
+    position: fixed;
+    bottom: 20px;
+    z-index: 1001;
+}
+@media (max-width: 480px){
+    .topnavs{
+        border-radius: 10px;
+        background-color: #191c2d;
+        height: 70px;
+        width: 90%;
+        height: 8vh;
+    }
+    .main-navs{
+        position: fixed;
+        top: 595px;
+        left: 20px;
+        z-index: 1001;
+    }
+    .main-icons1{
+        position: relative;
+        right: 50px;
+        top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }   
+    .main-icons1 li img{
+        position: relative;
+        left: 10px;
+        height: 32px;
+        display: flex;
+        margin-left: 10px;
+        height: 31px;
+    }
+    .icons3{
+        display: none;
+    }
+    .logo{
+        position: fixed;
+        top: -6px;
+        font-size: 1.7rem;
+    }
+    #logo-image2{
+        position: relative;
+        bottom: 8px;
+        height: 50px;
+    }
+}
