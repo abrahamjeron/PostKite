@@ -36,6 +36,7 @@
     position: fixed;
     bottom: 20px;
     z-index: 1001;
+    height: 30px;
 }
 @media (max-width: 480px){
     .topnavs{
@@ -48,7 +49,7 @@
     .main-navs{
         position: fixed;
         top: 595px;
-        left: 20px;
+        left: 10px;
         z-index: 1001;
     }
     .main-icons1{

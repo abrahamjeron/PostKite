@@ -193,7 +193,7 @@
 @media (max-width: 480px){
     .search-bar{
         position: fixed;
-        left: 190px;
+        left: 180px;
         top: -5px;
         /* background-color: #191c2d;
         border: 0.9px solid #f0f0f0c7; */
@@ -219,7 +219,7 @@
         justify-content: center;
         position: fixed;
         top: 70px;
-        left: 15px;
+        left: 10px;
         background-color: #191c2d;
         width: 350px;
         border-radius: 10px;
@@ -233,7 +233,7 @@
     }
     .main-posts{
         position: relative;
-        left: -53px;
+        left: -58px;
         top: 140px;
         height: 100vh;
         width: 1400px;
@@ -263,7 +263,7 @@
     }
     .baground{
         position: relative;
-        bottom: 35px;
+        bottom: 45px;
         right: 90px;
         background-color: #191c2d;
         width: 350px;

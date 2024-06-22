@@ -142,7 +142,7 @@ useEffect(() => {
                                     <img src={home} alt="Home" /> <p className="descriptions">Home</p>
                                 </div>
                             ) : (
-                                <img src={home} alt="Home" />
+                                <img onClick={(e)=>Navigate('/home')} src={home} alt="Home" />
                             )}
                         </li>
                         <li>
