@@ -150,7 +150,7 @@ li{
     }
     .register-form{
         /* position: relative; */
-        bottom: -40px;
+        bottom: -100px;
         right: 0px;
         /* background-color: #1c2033; */
         width: 330px;
@@ -221,4 +221,5 @@ li{
         font-size: 0.8rem;
         /* font-weight: 600; */
     }
+    
 }
